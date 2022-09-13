@@ -22,8 +22,8 @@ import { ConfigService } from '@nestjs/config';
 export class UserController {
   constructor(
     private readonly userService: UserService,
-    private readonly configService: ConfigService
-  ) { }
+    private readonly configService: ConfigService,
+  ) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
@@ -37,6 +37,7 @@ export class UserController {
   }
 
   @Get('getTestName')
+  @Version([VERSION_NEUTRAL, '1'])
   getTestName() {
     return this.configService.get('TEST_VALUE').name;
   }
@@ -44,19 +45,21 @@ export class UserController {
   @Get('findError')
   @Version([VERSION_NEUTRAL, '1'])
   findError() {
-    const a: any = {}
-    console.log(a.b.c)
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxx');
+    const a: any = {};
+    console.log(a.b.c);
+    console.log('-----------------');
     return this.userService.findAll();
   }
 
   @Get('findBusinessError')
   @Version([VERSION_NEUTRAL, '1'])
   findBusinessError() {
-    const a: any = {}
+    const a: any = {};
     try {
-      console.log(a.b.c)
+      console.log(a.b.c);
     } catch (error) {
-      throw new BusinessException('你这个参数错了')
+      throw new BusinessException('你这个参数错了');
     }
     return this.userService.findAll();
   }

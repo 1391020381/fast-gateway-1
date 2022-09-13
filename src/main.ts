@@ -1,4 +1,4 @@
-import { VersioningType, VERSION_NEUTRAL } from '@nestjs/common';
+import { Logger, VersioningType, VERSION_NEUTRAL } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
   FastifyAdapter,
