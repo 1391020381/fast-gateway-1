@@ -5,6 +5,7 @@
 
 * filter 自定义 异常过滤器
 * interceptor 自定义 拦截器 统一输出
+* pipe 管道 转化参数
 * 版本号
 * swagger
 * 热重载
