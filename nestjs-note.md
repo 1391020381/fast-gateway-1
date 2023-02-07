@@ -16,3 +16,18 @@
 
 * @UseFilters(new HttpExceptionFilter())
 * app.useGlobalFilters(new HttpExceptionFilter())
+
+
+
+# Fastify 
+* Fastify 非常适合这里 因为它以与 express类似的方式解决设计问题。然而 fastify的速度快得多,达到几乎两倍的基准测试结果。
+* express是应用广泛 广为认知的 而且拥有一套庞大的兼容中间件。
+* Nest 提供框架独立性
+* Nest使用Fastify作为http提供程序。 依赖Express的每个配方都不能起作用。需要改为Fastify等效程序包。
+
+# 拦截器
+1. 函数执行之前/之后绑定额外的逻辑
+2. 转换从函数返回的结果
+3. 转换从函数抛出的异常
+4. 拓展基本函数行为
+5. 根据所选条件完全重写函数
