@@ -1,5 +1,6 @@
 import { methodV } from 'src/utils/request';
 
+// 获取登录用户信息
 export const getUserInfo = async (user_token: string) => {
   const { data } = await methodV({
     url: `/authen/v1/user_info`,
@@ -56,7 +57,11 @@ export const getUserListByDepartmentId = async (department_id: string, app_token
   return data;
 };
 
-
+/**
+ * 新增人员类型
+ * @param 
+ * @returns 
+ */
 export const getEmployeeTypeEnums = async ({ app_token }) => {
   const { data } = await methodV({
     url: `/contact/v3/employee_type_enums`,
